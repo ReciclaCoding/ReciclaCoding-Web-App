@@ -1,0 +1,6 @@
+*.pyc
+__pycache__
+venv
+reciclavenv
+ReciclaCodingDatabase.sqlite3
+.DS_Store
