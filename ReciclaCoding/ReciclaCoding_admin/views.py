@@ -1,6 +1,6 @@
 from django.shortcuts import render, get_object_or_404
 from django.http import Http404
-from ReciclaCoding_admin.models import Note
+from ReciclaCoding_admin.models import Note, Register1, Register2
 
 
 def inicio(request):
@@ -14,5 +14,14 @@ def note(request, note_id):
     return render(request, 'ReciclaCoding_admin/notas.html', {'note': note})
 
 
-def error(request, mistaken):
-    raise Http404("La página no se ha creado aún")
+def recycle(request):
+    recycle_list = Register1.objects.order_by('register_recycle')
+    context = {'recycle_list': recycle_list}
+    return render(request, 'ReciclaCoding_admin/recicladoras.html', context)
+
+
+def r_names(request, recycle_id):
+    recycle = get_object_or_404(Register1, pk=recycle_id)
+    r_workers = Register2.objects.filter(recycle_id=recycle_id)
+    context = {'recycle': recycle, 'r_workers': r_workers}
+    return render(request, 'ReciclaCoding_admin/recicladora.html', context)

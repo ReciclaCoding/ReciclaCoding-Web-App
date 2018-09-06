@@ -1,0 +1,11 @@
+{% extends 'ReciclaCoding_admin/base.html' %}
+{% block content %}
+    <h4>{{ recycle.register_recycle}}</h4>
+        <p>dirección: {{ recycle.register_place }}</p>
+        <p>telefono: {{ recycle.register_phone }}</p>
+        <h6>Trabajadores</h6>
+        {% for worker in r_workers %}
+            <p>{{ worker.register_worker_name }}</p>
+            <p>{{ worker.register_worker_phone }}</p>
+        {% endfor %}
+{% endblock content %}

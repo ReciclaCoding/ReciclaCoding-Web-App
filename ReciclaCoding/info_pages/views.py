@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def proceso(request):
+    return render(request, 'info_pages/proceso.html')
+
+
+def materiales(request):
+    return render(request, 'info_pages/materiales.html')

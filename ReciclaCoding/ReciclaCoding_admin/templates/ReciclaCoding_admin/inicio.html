@@ -1,26 +1,14 @@
-{% load staticfiles %}
-<html>
-    <head>
-        <title>ReciclaCoding</title>
-        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-        <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
-    </head>
-    <body>
-        <div class="menu">
-            <h1><a href="/">ReciclaCoding</a></h1>
-            <h5><a href="/">Inicio</a> | Proceso del Reciclaje | Materiales Reciclables | Recicla Ahora | Registrar Código | SignUp | Contacto Recicladoras | Usuario: User_name</h5>
-        </div>
-        <h5> ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ </h5>
-        <h5> Últimas Actualizaciones </h5>
-        {% if notes_list %}
-            {% for note in notes_list %}
-                <div>
-                <h6><a href="/notes/{{ note.id }}/">{{ note.note_title }}</a></h6>
-                <p>{{ note.note_content }}</p>
-                </div>
-            {% endfor %}
-        {% else %}
-            <p>No existen notas disponibles</p>
-        {% endif %}
-    </body>
-</html>
+{% extends 'ReciclaCoding_admin/base.html' %}
+{% block content %}
+    <h5> Últimas Actualizaciones </h5>
+    {% if notes_list %}
+        {% for note in notes_list %}
+            <div>
+            <h6><a href="/notes/{{ note.id }}/">{{ note.note_title }}</a></h6>
+            <p>{{ note.note_content }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No existen notas disponibles</p>
+    {% endif %}
+{% endblock content %}

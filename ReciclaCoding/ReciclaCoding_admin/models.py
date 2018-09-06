@@ -14,6 +14,7 @@ class Note(models.Model):
 class Register1(models.Model):
     register_recycle = models.CharField(max_length=50)
     register_place = models.CharField(max_length=200)
+    register_phone = models.CharField(max_length=10)
 
     def __str__(self):
         return self.register_recycle

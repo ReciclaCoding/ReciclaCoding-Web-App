@@ -1,0 +1,15 @@
+{% extends 'ReciclaCoding_admin/base.html' %}
+{% block content %}
+    <h5> Últimas Actualizaciones </h5>
+    {% if recycle_list %}
+        {% for recicladora in recycle_list %}
+            <div>
+            <h6><a href="/recicladoras/{{ recicladora.id }}">{{ recicladora.register_recycle}}</a></h6>
+            <p>dirección: {{ recicladora.register_place }}</p>
+            <p>telefono: {{ recicladora.register_phone }}</p>
+            </div>
+        {% endfor %}
+    {% else %}
+        <p>No existen Recicladoras registradas</p>
+    {% endif %}
+{% endblock content %}

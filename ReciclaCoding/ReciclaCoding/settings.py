@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'ReciclaCoding_admin.apps.ReciclacodingAdminConfig',
+    'info_pages.apps.InfoPagesConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
