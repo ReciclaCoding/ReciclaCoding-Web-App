@@ -5,13 +5,10 @@ from django.utils import timezone
 class Note(models.Model):
     note_title = models.CharField(max_length=50)
     note_content = models.TextField(max_length=300)
+    publish_date = models.DateTimeField(default=timezone.now)
 
     def __str__(self):
         return self.note_title
-
-    def publish(self):
-        self.published_date = timezone.now()
-        self.save()
 
 
 class Register1(models.Model):

@@ -1,0 +1,16 @@
+h1 a {
+color: #FFFFFF;
+}
+h5 a {
+color: #FFFFFF;
+}
+body {
+padding-left: 10px;
+padding-top: 10px;
+}
+.menu {
+background-color: #1872AD;
+margin-top: 0;
+margin-right: 10;
+padding: 20px 20px 20px 40px;
+}
