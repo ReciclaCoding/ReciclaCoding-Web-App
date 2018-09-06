@@ -6,11 +6,23 @@
         <link rel="stylesheet" href="{% static 'css/inicio.css' %}">
     </head>
     <body>
+        {% if user.is_authenticated %}
         <div class="menu">
             <h1><a href="/">ReciclaCoding</a></h1>
-        <h5><a href="/">Inicio</a> | <a href="/proceso">Proceso del Reciclaje</a> | <a href="/materiales">Materiales Reciclables</a> | Recicla Ahora | Registrar Código | SignUp | <a href="/recicladoras/">Recicladoras</a> | Usuario: User_name</h5>
+            <h5><a href="/">Inicio</a> | <a href="/proceso">Proceso del Reciclaje</a> | <a href="/materiales">Materiales Reciclables</a> | <a href="/formulario/">Recicla Ahora</a> | <a href="/codigo/">Registrar Código</a> | SignUp | <a href="/recicladoras/">Recicladoras</a></h5>
         </div>
-        <h5> ------------------------------------------------------------------------------------------------------------------------------------------------------------------------ </h5>
+        <h5> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- </h5>
+            Hi {{ user.username }}!   /   <a href="{% url 'logout' %}">logout</a>
+        <h5> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- </h5>
+        {% else %}
+        <div class="menu">
+            <h1><a href="/">ReciclaCoding</a></h1>
+            <h5><a href="/">Inicio</a> | <a href="/proceso">Proceso del Reciclaje</a> | <a href="/materiales">Materiales Reciclables</a> | Recicla Ahora | Registrar Código | <a href="/signup/">SignUp</a> | <a href="/recicladoras/">Recicladoras</a></h5>
+        </div>
+        <h5> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- </h5>
+            You are not logged in   /   <a href="/login/">login</a>
+        <h5> ---------------------------------------------------------------------------------------------------------------------------------------------------------------------- </h5>
+        {% endif %}
         {% block content %}
         {% endblock %}
     </body>
