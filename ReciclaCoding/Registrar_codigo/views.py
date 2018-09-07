@@ -1,3 +1,5 @@
 from django.shortcuts import render
 
-# Create your views here.
+
+def codigo(request):
+    return render(request, 'Registrar_codigo/codigo.html')

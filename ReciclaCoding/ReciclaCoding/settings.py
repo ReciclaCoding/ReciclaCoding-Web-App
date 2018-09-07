@@ -33,7 +33,9 @@ ALLOWED_HOSTS = []
 INSTALLED_APPS = [
     'ReciclaCoding_admin.apps.ReciclacodingAdminConfig',
     'Registro.apps.RegistroConfig',
+    'Registrar_codigo.apps.RegistrarCodigoConfig',
     'info_pages.apps.InfoPagesConfig',
+    'Formulario.apps.FormularioConfig',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -124,3 +126,4 @@ STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 LOGIN_REDIRECT_URL = '/'
 LOGOUT_REDIRECT_URL = '/'
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
